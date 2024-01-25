@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import Table from './components/Table';
+import Header from './components/Header';
+import { ProductProvider } from './Context/productContext';
+import { TABLE_HEADERS } from './constants/tableHeaders';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ProductProvider>
+      <div className="p-[25px]">
+      <Header />
+      <Table headers={TABLE_HEADERS} />
     </div>
+    </ProductProvider>
   );
 }
 
